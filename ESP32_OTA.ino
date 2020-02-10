@@ -13,17 +13,16 @@ void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
   Serial.println("Connecting to WiFi.....");
-    delay(1000);
-    while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-      Serial.println("Connection Failed! Rebooting...");
-      //wifi_status = 0;
-      delay(5000);
-      ESP.restart();
-    }
-    ArduinoOTA.begin();
-    Serial.println("Connected OK");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+  delay(1000);
+  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("Connection Failed! Rebooting...");
+    delay(5000);
+    ESP.restart();
+  }
+  ArduinoOTA.begin();
+  Serial.println("Connected OK");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
 //*************************************************************************************
 //Insert sketch code from here*********************************************************
     
